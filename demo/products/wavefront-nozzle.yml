@@ -1,3 +1,6 @@
+---
+# wavefront-nozzle 2.0.0
+
 product-name: wavefront-nozzle
 product-properties:
   .properties.advanced_config:
@@ -13,20 +16,22 @@ product-properties:
     selected_option: default
     value: Default
   .properties.custom_tag_foundation:
-    value: us-central1-gcp
+    value: ((environment_name))
   .properties.friendly_hostname:
-    value: us-central1-pcf-proxy
+    value: ((environment_name))-pcf-proxy
   .properties.org:
     value: wavefront-nozzle-org
   .properties.pcf_host:
-    value: api.sys.us-central1.gcp.dashaun.cloud
+    value: api.((tf_sys_dns_domain))
+  .properties.pcf_log_stream:
+    value: https://log-stream.((tf_sys_dns_domain))
   .properties.pcf_password:
     value:
       secret: ((properties_wavefront_user.password))
   .properties.pcf_skip_ssl_validation:
-    value: true
+    value: false
   .properties.pcf_user:
-    value: admin
+    value: ((properties_wavefront_user.username))
   .properties.space:
     value: wavefront-apps-space
   .properties.wavefront_service_broker_enable_global_access_to_plans:
@@ -37,13 +42,12 @@ product-properties:
     value: https://surf.wavefront.com/api
 network-properties:
   network:
-    name: us-central1-services-subnet
+    name: ((tf_network_name))
   other_availability_zones:
-  - name: us-central1-c
-  - name: us-central1-b
-  - name: us-central1-a
+  - name: ((tf_availability_zones_1))
+  - name: ((tf_availability_zones_0))
   singleton_availability_zone:
-    name: us-central1-a
+    name: ((tf_availability_zones_0))
 resource-config:
   delete-all:
     max_in_flight: 1
@@ -80,4 +84,3 @@ errand-config:
     pre-delete-state: true
   deploy-all:
     post-deploy-state: true
-
