@@ -2,11 +2,8 @@ product-name: cf
 product-properties:
   .cloud_controller.allow_app_ssh_access:
     value: true
-<<<<<<< HEAD
-=======
   .cloud_controller.apps_domain:
-    value: apps.demo.gcp.dashaun.cloud
->>>>>>> upstream/master
+    value: apps.((environment_name)).((iaas)).dashaun.cloud
   .cloud_controller.default_app_memory:
     value: 1024
   .cloud_controller.default_app_ssh_access:
@@ -14,7 +11,7 @@ product-properties:
   .cloud_controller.default_disk_quota_app:
     value: 1024
   .cloud_controller.default_quota_max_number_services:
-    value: 100
+    value: 10
   .cloud_controller.default_quota_memory_limit_mb:
     value: 10240
   .cloud_controller.enable_custom_buildpacks:
@@ -32,21 +29,14 @@ product-properties:
     value: true
   .cloud_controller.staging_timeout_in_seconds:
     value: 900
-<<<<<<< HEAD
-=======
   .cloud_controller.system_domain:
-    value: sys.demo.gcp.dashaun.cloud
->>>>>>> upstream/master
+    value: sys.((environment_name)).((iaas)).dashaun.cloud
   .diego_brain.starting_container_count_maximum:
     value: 200
   .ha_proxy.skip_cert_verify:
     value: false
   .mysql.cli_history:
-<<<<<<< HEAD
-    value: true
-=======
     value: false
->>>>>>> upstream/master
   .mysql.max_connections:
     value: 3500
   .mysql.prevent_node_auto_rejoin:
@@ -55,11 +45,8 @@ product-properties:
     value: false
   .mysql_monitor.poll_frequency:
     value: 30
-<<<<<<< HEAD
-=======
   .mysql_monitor.recipient_email:
-    value: dacarter@vmware.com
->>>>>>> upstream/master
+    value: ((email))
   .mysql_monitor.write_read_delay:
     value: 20
   .mysql_proxy.enable_inactive_mysql_port:
@@ -134,15 +121,12 @@ product-properties:
   .properties.credhub_hsm_provider_partition_password:
     value:
       secret: ((properties_credhub_hsm_provider_partition_password.secret))
-<<<<<<< HEAD
-=======
   .properties.credhub_internal_provider_keys:
     value:
     - key:
         secret: ((properties_credhub_internal_provider_keys_0_key.secret))
-      name: intenalkey_name
+      name: default
       primary: true
->>>>>>> upstream/master
   .properties.diego_database_max_open_connections:
     value: 100
   .properties.diego_log_timestamp_format:
@@ -163,23 +147,16 @@ product-properties:
   .properties.experimental_dynamic_egress_enforcement:
     value: false
   .properties.garden_disk_cleanup:
-    selected_option: reserved
-    value: reserved
-  .properties.garden_disk_cleanup.reserved.reserved_space_for_other_jobs_in_mb:
-    value: 15360
+    selected_option: routine
+    value: routine
   .properties.gorouter_ssl_ciphers:
     value: ECDHE-RSA-AES128-GCM-SHA256:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
   .properties.haproxy_client_cert_validation:
     selected_option: none
     value: none
   .properties.haproxy_forward_tls:
-<<<<<<< HEAD
-    selected_option: enable
-    value: enable
-=======
     selected_option: disable
     value: disable
->>>>>>> upstream/master
   .properties.haproxy_hsts_support:
     selected_option: disable
     value: disable
@@ -201,37 +178,33 @@ product-properties:
   .properties.metric_registrar_scrape_interval_in_seconds:
     value: 35
   .properties.mysql_activity_logging:
-    selected_option: enable
-    value: enable
-  .properties.mysql_activity_logging.enable.audit_logging_events:
-    value: connect,query
-<<<<<<< HEAD
-=======
+    selected_option: disable
+    value: disable
   .properties.networking_poe_ssl_certs:
     value:
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_0_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_0_certificate.private_key_pem))
-      name: wildcard
->>>>>>> upstream/master
+      - certificate:
+          cert_pem: ((properties_networking_poe_ssl_certs_0_certificate.cert_pem))
+          private_key_pem: ((properties_networking_poe_ssl_certs_0_certificate.private_key_pem))
+        name: wildcard
   .properties.networkpolicyserver_database_max_open_connections:
     value: 200
   .properties.networkpolicyserverinternal_database_max_open_connections:
     value: 200
   .properties.nfs_volume_driver:
-    selected_option: enable
-    value: enable
-  .properties.nfs_volume_driver.enable.ldap_service_account_password:
-    value:
-      secret: ((properties_nfs_volume_driver_enable_ldap_service_account_password.secret))
+    selected_option: disable
+    value: disable
   .properties.push_apps_manager_app_poll_interval:
     value: 10
+  .properties.push_apps_manager_company_name:
+    value: homelab1-vsphere-dashaun-cloud
   .properties.push_apps_manager_currency_lookup:
     value: '{ "usd": "$", "eur": "€" }'
   .properties.push_apps_manager_display_plan_prices:
     value: false
   .properties.push_apps_manager_enable_invitations:
     value: true
+  .properties.push_apps_manager_footer_text:
+    value: homelab1-vsphere-dashaun-cloud
   .properties.push_apps_manager_nav_links:
     value:
     - href: https://docs.pivotal.io/pivotalcf/2-8/pas/intro.html
@@ -274,14 +247,6 @@ product-properties:
     selected_option: tls_v1_2
     value: tls_v1_2
   .properties.routing_tls_termination:
-<<<<<<< HEAD
-    selected_option: load_balancer
-    value: load_balancer
-  .properties.saml_signature_algorithm:
-    value: SHA256
-  .properties.secure_service_instance_credentials:
-    value: false
-=======
     selected_option: router
     value: router
   .properties.saml_signature_algorithm:
@@ -290,17 +255,13 @@ product-properties:
     value: true
   .properties.security_acknowledgement:
     value: X
->>>>>>> upstream/master
   .properties.silk_database_max_open_connections:
     value: 200
   .properties.smoke_tests:
     selected_option: on_demand
     value: on_demand
-<<<<<<< HEAD
-=======
   .properties.smtp_address:
     value: smtp.sendgrid.net
->>>>>>> upstream/master
   .properties.smtp_auth_mechanism:
     value: plain
   .properties.smtp_credentials:
@@ -308,15 +269,11 @@ product-properties:
       identity: ((properties_smtp_credentials.identity))
       password: ((properties_smtp_credentials.password))
   .properties.smtp_enable_starttls_auto:
-<<<<<<< HEAD
-    value: false
-=======
     value: true
   .properties.smtp_from:
-    value: dacarter@vmware.com
+    value: ((email))
   .properties.smtp_port:
     value: 465
->>>>>>> upstream/master
   .properties.syslog_drop_debug:
     value: true
   .properties.syslog_tls:
@@ -325,11 +282,34 @@ product-properties:
   .properties.syslog_use_tcp_for_file_forwarding_local_transport:
     value: false
   .properties.system_blobstore:
-    selected_option: internal
-    value: internal
+    selected_option: external
+    value: external
+  .properties.system_blobstore.external.access_key:
+    value: minioadmin
+  .properties.system_blobstore.external.buildpacks_bucket:
+    value: ((environment_name))-buildpacks
+  .properties.system_blobstore.external.droplets_bucket:
+    value: ((environment_name))-droplets
+  .properties.system_blobstore.external.encryption:
+    value: false
+  .properties.system_blobstore.external.endpoint:
+    value: ((minio_endpoint))
+  .properties.system_blobstore.external.iam_instance_profile_authentication:
+    value: false
+  .properties.system_blobstore.external.packages_bucket:
+    value: ((environment_name))-packages
+  .properties.system_blobstore.external.resources_bucket:
+    value: ((environment_name))-resources
+  .properties.system_blobstore.external.secret_key:
+    value:
+      secret: ((properties_system_blobstore_external_secret_key.secret))
+  .properties.system_blobstore.external.signature_version:
+    value: "2"
+  .properties.system_blobstore.external.versioning:
+    value: false
   .properties.system_blobstore_backup_level:
-    selected_option: all
-    value: all
+    selected_option: skip_droplets_packages
+    value: skip_droplets_packages
   .properties.system_blobstore_ccdroplet_max_staged_droplets_stored:
     value: 2
   .properties.system_blobstore_ccpackage_max_valid_packages_stored:
@@ -405,161 +385,371 @@ product-properties:
       secret: ((uaa_service_provider_key_password.secret))
 network-properties:
   network:
-    name: demo-network
-<<<<<<< HEAD
-  other_availability_zones: []
-  singleton_availability_zone: null
-=======
+    name: homelab1-network
   other_availability_zones:
-  - name: us-central1-a
-  - name: us-central1-b
+  - name: homelab1-az1
   singleton_availability_zone:
-    name: us-central1-a
->>>>>>> upstream/master
+    name: homelab1-az1
 resource-config:
   backup_restore:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
-    elb_names: []
     instance_type:
       id: automatic
     instances: automatic
-    internet_connected: true
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
     persistent_disk:
       size_mb: automatic
     swap_as_percent_of_memory_size: automatic
-  blobstore:
+  clock_global:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
-    elb_names: []
     instance_type:
       id: automatic
     instances: automatic
-    internet_connected: true
-    persistent_disk:
-      size_mb: automatic
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
     swap_as_percent_of_memory_size: automatic
-  compute:
+  cloud_controller:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
+    swap_as_percent_of_memory_size: automatic
+  cloud_controller_worker:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
+    swap_as_percent_of_memory_size: automatic
+  credhub:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
+    swap_as_percent_of_memory_size: automatic
+  diego_brain:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
+    swap_as_percent_of_memory_size: automatic
+  diego_cell:
     max_in_flight: 4%
     additional_networks: []
     additional_vm_extensions: []
-    elb_names: []
     instance_type:
       id: automatic
     instances: automatic
-    internet_connected: true
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
     swap_as_percent_of_memory_size: automatic
-  control:
+  diego_database:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
-<<<<<<< HEAD
-    elb_names: []
-=======
-    elb_names:
-    - tcp:demo-ssh-lb
->>>>>>> upstream/master
     instance_type:
       id: automatic
     instances: automatic
-    internet_connected: true
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
     swap_as_percent_of_memory_size: automatic
-  database:
+  doppler:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
-    elb_names: []
     instance_type:
       id: automatic
     instances: automatic
-    internet_connected: true
-    persistent_disk:
-      size_mb: automatic
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
     swap_as_percent_of_memory_size: automatic
   ha_proxy:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
-    elb_names: []
     instance_type:
       id: automatic
     instances: automatic
-    internet_connected: true
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
     swap_as_percent_of_memory_size: automatic
   istio_control:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
-    elb_names: []
     instance_type:
       id: automatic
     instances: 0
-    internet_connected: true
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
     swap_as_percent_of_memory_size: automatic
   istio_router:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
-    elb_names: []
     instance_type:
       id: automatic
     instances: 0
-    internet_connected: true
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
+    swap_as_percent_of_memory_size: automatic
+  loggregator_trafficcontroller:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
+    swap_as_percent_of_memory_size: automatic
+  mysql:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
+    persistent_disk:
+      size_mb: automatic
     swap_as_percent_of_memory_size: automatic
   mysql_monitor:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
-    elb_names: []
     instance_type:
       id: automatic
     instances: automatic
-    internet_connected: true
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
+    swap_as_percent_of_memory_size: automatic
+  mysql_proxy:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
+    swap_as_percent_of_memory_size: automatic
+  nats:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
+    swap_as_percent_of_memory_size: automatic
+  nfs_server:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    instance_type:
+      id: automatic
+    instances: 0
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
+    persistent_disk:
+      size_mb: automatic
     swap_as_percent_of_memory_size: automatic
   route_syncer:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
-    elb_names: []
     instance_type:
       id: automatic
     instances: 0
-    internet_connected: true
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
     swap_as_percent_of_memory_size: automatic
   router:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
-<<<<<<< HEAD
-    elb_names: []
-=======
-    elb_names:
-    - tcp:demo-websocket-lb
-    - http:demo-http-lb
->>>>>>> upstream/master
     instance_type:
       id: automatic
     instances: automatic
-    internet_connected: true
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
     swap_as_percent_of_memory_size: automatic
   tcp_router:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
-<<<<<<< HEAD
-    elb_names: []
-=======
-    elb_names:
-    - tcp:demo-tcp-lb
->>>>>>> upstream/master
     instance_type:
       id: automatic
     instances: 0
-    internet_connected: true
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
     persistent_disk:
       size_mb: automatic
+    swap_as_percent_of_memory_size: automatic
+  uaa:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
     swap_as_percent_of_memory_size: automatic
 errand-config:
   deploy-autoscaler:

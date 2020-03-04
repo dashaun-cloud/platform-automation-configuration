@@ -21,19 +21,12 @@ product-properties:
   .properties.bosh-metric-sink-outputs:
     value: |
       [[outputs.discard]]
-  .properties.cloud_provider:
-    selected_option: gcp
-    value: GCP
-  .properties.cloud_provider.gcp.master_service_account:
-    value: ((tf_pks_master_node_service_account_id))
-  .properties.cloud_provider.gcp.network:
-    value: ((tf_network_name))
-  .properties.cloud_provider.gcp.project_id:
-    value: ((project))
-  .properties.cloud_provider.gcp.subnetwork:
-    value: ((tf_pks_subnet_name))
-  .properties.cloud_provider.gcp.worker_service_account:
-    value: ((tf_pks_worker_node_service_account_id))
+  .properties.cloud_provider.azure.azure_cloud_name:
+    value: AzurePublicCloud
+  .properties.cloud_provider.vsphere.vcenter_master_creds:
+    value:
+      identity: ((properties_cloud_provider_vsphere_vcenter_master_creds.identity))
+      password: ((properties_cloud_provider_vsphere_vcenter_master_creds.password))
   .properties.log_sink_resources_deploy:
     value: true
   .properties.metric_sink_resources_deploy:
@@ -56,13 +49,9 @@ product-properties:
   .properties.pks-vrops:
     selected_option: disabled
     value: disabled
-  .properties.pks_api_hostname:
-    value: ((tf_pks_api_dns_domain))
   .properties.plan1_selector:
     selected_option: active
     value: Plan Active
-  .properties.plan1_selector.active.admission_plugins:
-    value: []
   .properties.plan1_selector.active.allow_privileged_containers:
     value: false
   .properties.plan1_selector.active.description:
@@ -80,22 +69,12 @@ product-properties:
     value: true
   .properties.plan1_selector.active.kubelet_drain_timeout:
     value: 0
-  .properties.plan1_selector.active.master_az_placement:
-    value:
-      - ((tf_availability_zones_0))
-      - ((tf_availability_zones_1))
   .properties.plan1_selector.active.master_instances:
     value: 1
-  .properties.plan1_selector.active.master_persistent_disk_type:
-    value: "51200"
   .properties.plan1_selector.active.max_worker_instances:
-    value: 5
+    value: 50
   .properties.plan1_selector.active.name:
     value: small
-  .properties.plan1_selector.active.worker_az_placement:
-    value:
-      - ((tf_availability_zones_0))
-      - ((tf_availability_zones_1))
   .properties.plan1_selector.active.worker_instances:
     value: 3
   .properties.plan2_selector:
@@ -140,9 +119,6 @@ product-properties:
   .properties.syslog_selector:
     selected_option: disabled
     value: disabled
-  .properties.telemetry_installation_purpose_selector:
-    selected_option: demo_or_poc
-    value: demo_or_poc
   .properties.telemetry_selector:
     selected_option: enabled
     value: enabled
@@ -175,25 +151,28 @@ product-properties:
     value: 5
 network-properties:
   network:
-    name: ((tf_network_name))
+    name: homelab1-network
   other_availability_zones:
-    - name: ((tf_availability_zones_0))
-    - name: ((tf_availability_zones_1))
-  service_network:
-    name: ((tf_network_name))
+  - name: homelab1-az1
+  service_network: null
   singleton_availability_zone:
-    name: ((tf_availability_zones_0))
+    name: homelab1-az1
 resource-config:
   pivotal-container-service:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
-    elb_names:
-      - tcp:((tf_pks_api_target_pool_name))
     instance_type:
       id: automatic
     instances: automatic
-    internet_connected: true
+    nsx:
+      lbs: []
+      security_groups: []
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+      vif_type: null
     persistent_disk:
       size_mb: automatic
     swap_as_percent_of_memory_size: automatic
@@ -201,7 +180,6 @@ errand-config:
   delete-all-clusters:
     pre-delete-state: true
   pks-nsx-t-precheck:
-<<<<<<< HEAD
     post-deploy-state: false
   smoke-tests:
     post-deploy-state: false
@@ -211,14 +189,4 @@ errand-config:
     post-deploy-state: false
   wavefront-alert-deletion:
     pre-delete-state: false
-=======
-    post-deploy-state: true
-  smoke-tests:
-    post-deploy-state: true
-  upgrade-all-service-instances:
-    post-deploy-state: true
-  wavefront-alert-creation:
-    post-deploy-state: true
-  wavefront-alert-deletion:
-    pre-delete-state: true
->>>>>>> upstream/master
+
