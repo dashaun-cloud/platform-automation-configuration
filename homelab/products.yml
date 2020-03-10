@@ -29,3 +29,15 @@ products:
     pivnet-product-slug: stemcells-ubuntu-xenial
     pivnet-api-token: ((pivnet_token))
     pivnet-file-glob: "bosh-stemcell-*-vsphere-esxi-ubuntu-xenial-go_agent.tgz"
+
+  wavefront-nozzle:
+    product-version: 2.0.0
+    pivnet-product-slug: wavefront-nozzle
+    pivnet-api-token: ((pivnet_token))
+    pivnet-file-glob: "wavefront-nozzle-*.pivotal"
+    stemcell-iaas: google
+  wavefront-nozzle-stemcell:
+    product-version: "250.183"
+    pivnet-product-slug: stemcells-ubuntu-xenial
+    pivnet-api-token: ((pivnet_token))
+    pivnet-file-glob: "light-bosh-stemcell-*-google-kvm-ubuntu-xenial-go_agent.tgz"

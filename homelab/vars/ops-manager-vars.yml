@@ -22,5 +22,5 @@ vsphere:
   netmask: ((homelab_netmask))
   gateway: ((homelab_gateway))
   vm_name: ((opsman_vm_name))               # default: Ops_Manager
-  memory: 8                                   # default: 8 GB
+  memory: 32                                   # default: 16 GB
   cpu: 2                                      # default: 2
