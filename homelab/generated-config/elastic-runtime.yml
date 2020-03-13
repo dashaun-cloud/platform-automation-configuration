@@ -339,11 +339,11 @@ product-properties:
       secret: ((uaa_service_provider_key_password.secret))
 network-properties:
   network:
-    name: homelab-network
+    name: ((vcenter.network))
   other_availability_zones:
-  - name: homelab-az1
+  - name: vcenter-az1
   singleton_availability_zone:
-    name: homelab-az1
+    name: vcenter-az1
 resource-config:
   backup_restore:
     max_in_flight: 1

@@ -84,7 +84,7 @@ product-properties:
     value: 0
   .properties.plan1_selector.active.master_az_placement:
     value:
-    - homelab-az1
+    - ((installation_name))-az1
   .properties.plan1_selector.active.master_instances:
     value: 1
   .properties.plan1_selector.active.max_worker_instances:
@@ -93,7 +93,7 @@ product-properties:
     value: small
   .properties.plan1_selector.active.worker_az_placement:
     value:
-    - homelab-az1
+    - ((installation_name))-az1
   .properties.plan1_selector.active.worker_instances:
     value: 3
   .properties.plan2_selector:
@@ -173,13 +173,13 @@ product-properties:
     value: 5
 network-properties:
   network:
-    name: homelab-network
+    name: ((vcenter.network))
   other_availability_zones:
-  - name: homelab-az1
+  - name: ((installation_name))-az1
   service_network:
-    name: homelab-network
+    name: ((vcenter.network))
   singleton_availability_zone:
-    name: homelab-az1
+    name: ((installation_name))-az1
 resource-config:
   pivotal-container-service:
     max_in_flight: 1
