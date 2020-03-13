@@ -196,7 +196,7 @@ product-properties:
   .properties.push_apps_manager_app_poll_interval:
     value: 10
   .properties.push_apps_manager_company_name:
-    value: homelab1-vsphere-dashaun-cloud
+    value: homelab-vsphere-dashaun-cloud
   .properties.push_apps_manager_currency_lookup:
     value: '{ "usd": "$", "eur": "€" }'
   .properties.push_apps_manager_display_plan_prices:
@@ -204,7 +204,7 @@ product-properties:
   .properties.push_apps_manager_enable_invitations:
     value: true
   .properties.push_apps_manager_footer_text:
-    value: homelab1-vsphere-dashaun-cloud
+    value: homelab-vsphere-dashaun-cloud
   .properties.push_apps_manager_nav_links:
     value:
     - href: https://docs.pivotal.io/pivotalcf/2-8/pas/intro.html
@@ -385,11 +385,11 @@ product-properties:
       secret: ((uaa_service_provider_key_password.secret))
 network-properties:
   network:
-    name: homelab1-network
+    name: homelab-network
   other_availability_zones:
-  - name: homelab1-az1
+  - name: homelab-az1
   singleton_availability_zone:
-    name: homelab1-az1
+    name: homelab-az1
 resource-config:
   backup_restore:
     max_in_flight: 1
