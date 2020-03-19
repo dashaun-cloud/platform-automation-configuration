@@ -1,6 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
 # elastic-runtime 2.8.3
 
+>>>>>>> upstream/master
 cloud_controller_encrypt_key:
   secret: ((cloud_controller_encrypt_key))
 
@@ -20,11 +23,16 @@ uaa_service_provider_key_password:
   secret: ((uaa_service_provider_key_password))
 
 properties_smtp_credentials:
+<<<<<<< HEAD
+  identity: apikey
+  password: ((smtp_credentials.password))
+=======
   identity: ((sendgrid-api.username))
   password: ((sendgrid-api.password))
 
 sendgrid-dns: ((sendgrid-dns))
 sendgrid-port: ((sendgrid-port))
+>>>>>>> upstream/master
 
 properties_credhub_hsm_provider_client_certificate:
   cert_pem: ""

@@ -1,6 +1,9 @@
+<<<<<<< HEAD
+=======
 ---
 # elastic-runtime 2.8.3
 
+>>>>>>> upstream/master
 product-name: cf
 product-properties:
   .cloud_controller.allow_app_ssh_access:
@@ -266,8 +269,11 @@ product-properties:
   .properties.smoke_tests:
     selected_option: on_demand
     value: on_demand
+<<<<<<< HEAD
+=======
   .properties.smtp_address:
     value: ((sendgrid-dns))
+>>>>>>> upstream/master
   .properties.smtp_auth_mechanism:
     value: plain
   .properties.smtp_credentials:
@@ -275,11 +281,15 @@ product-properties:
       identity: ((properties_smtp_credentials.identity))
       password: ((properties_smtp_credentials.password))
   .properties.smtp_enable_starttls_auto:
+<<<<<<< HEAD
+    value: false
+=======
     value: true
   .properties.smtp_from:
     value: ((email))
   .properties.smtp_port:
     value: ((sendgrid-port))
+>>>>>>> upstream/master
   .properties.syslog_drop_debug:
     value: true
   .properties.syslog_tls:
@@ -329,8 +339,11 @@ product-properties:
     value: 1800
   .router.disable_insecure_cookies:
     value: false
+<<<<<<< HEAD
+=======
   .router.drain_timeout:
     value: 900
+>>>>>>> upstream/master
   .router.drain_wait:
     value: 20
   .router.enable_isolated_routing:
