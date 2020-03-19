@@ -13,14 +13,14 @@ vsphere:
     insecure: 1                               # default: 0 (secure); 1 (insecure)
   disk_type: thin                            # example: thin|thick
   private_ip: ((opsman_private_ip))
-  dns: ((homelab_dns))
+  dns: ((network_dns))
   ntp: pool.ntp.org                    # example: ntp.ubuntu.com
   ssh_password: ""
-  ssh_public_key: ((homelab_ssh_pub))
+  ssh_public_key: ((buccbox_ssh_pub))
   hostname: ((opsman_hostname))
-  network: ((homelab_network))              # vcenter network to deploy to
-  netmask: ((homelab_netmask))
-  gateway: ((homelab_gateway))
+  network: ((vcenter_network))              # vcenter network to deploy to
+  netmask: ((vcenter_netmask))
+  gateway: ((vcenter_gateway))
   vm_name: ((opsman_vm_name))               # default: Ops_Manager
-  memory: 8                                   # default: 8 GB
+  memory: 32                                   # default: 16 GB
   cpu: 2                                      # default: 2

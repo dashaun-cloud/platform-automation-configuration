@@ -201,6 +201,17 @@ errand-config:
   delete-all-clusters:
     pre-delete-state: true
   pks-nsx-t-precheck:
+<<<<<<< HEAD
+    post-deploy-state: false
+  smoke-tests:
+    post-deploy-state: false
+  upgrade-all-service-instances:
+    post-deploy-state: true
+  wavefront-alert-creation:
+    post-deploy-state: false
+  wavefront-alert-deletion:
+    pre-delete-state: false
+=======
     post-deploy-state: true
   smoke-tests:
     post-deploy-state: true
@@ -210,3 +221,4 @@ errand-config:
     post-deploy-state: true
   wavefront-alert-deletion:
     pre-delete-state: true
+>>>>>>> upstream/master

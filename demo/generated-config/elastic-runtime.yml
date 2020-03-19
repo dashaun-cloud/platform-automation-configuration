@@ -2,8 +2,11 @@ product-name: cf
 product-properties:
   .cloud_controller.allow_app_ssh_access:
     value: true
+<<<<<<< HEAD
+=======
   .cloud_controller.apps_domain:
     value: apps.demo.gcp.dashaun.cloud
+>>>>>>> upstream/master
   .cloud_controller.default_app_memory:
     value: 1024
   .cloud_controller.default_app_ssh_access:
@@ -29,14 +32,21 @@ product-properties:
     value: true
   .cloud_controller.staging_timeout_in_seconds:
     value: 900
+<<<<<<< HEAD
+=======
   .cloud_controller.system_domain:
     value: sys.demo.gcp.dashaun.cloud
+>>>>>>> upstream/master
   .diego_brain.starting_container_count_maximum:
     value: 200
   .ha_proxy.skip_cert_verify:
     value: false
   .mysql.cli_history:
+<<<<<<< HEAD
+    value: true
+=======
     value: false
+>>>>>>> upstream/master
   .mysql.max_connections:
     value: 3500
   .mysql.prevent_node_auto_rejoin:
@@ -45,8 +55,11 @@ product-properties:
     value: false
   .mysql_monitor.poll_frequency:
     value: 30
+<<<<<<< HEAD
+=======
   .mysql_monitor.recipient_email:
     value: dacarter@vmware.com
+>>>>>>> upstream/master
   .mysql_monitor.write_read_delay:
     value: 20
   .mysql_proxy.enable_inactive_mysql_port:
@@ -121,12 +134,15 @@ product-properties:
   .properties.credhub_hsm_provider_partition_password:
     value:
       secret: ((properties_credhub_hsm_provider_partition_password.secret))
+<<<<<<< HEAD
+=======
   .properties.credhub_internal_provider_keys:
     value:
     - key:
         secret: ((properties_credhub_internal_provider_keys_0_key.secret))
       name: intenalkey_name
       primary: true
+>>>>>>> upstream/master
   .properties.diego_database_max_open_connections:
     value: 100
   .properties.diego_log_timestamp_format:
@@ -157,8 +173,13 @@ product-properties:
     selected_option: none
     value: none
   .properties.haproxy_forward_tls:
+<<<<<<< HEAD
+    selected_option: enable
+    value: enable
+=======
     selected_option: disable
     value: disable
+>>>>>>> upstream/master
   .properties.haproxy_hsts_support:
     selected_option: disable
     value: disable
@@ -184,12 +205,15 @@ product-properties:
     value: enable
   .properties.mysql_activity_logging.enable.audit_logging_events:
     value: connect,query
+<<<<<<< HEAD
+=======
   .properties.networking_poe_ssl_certs:
     value:
     - certificate:
         cert_pem: ((properties_networking_poe_ssl_certs_0_certificate.cert_pem))
         private_key_pem: ((properties_networking_poe_ssl_certs_0_certificate.private_key_pem))
       name: wildcard
+>>>>>>> upstream/master
   .properties.networkpolicyserver_database_max_open_connections:
     value: 200
   .properties.networkpolicyserverinternal_database_max_open_connections:
@@ -250,6 +274,14 @@ product-properties:
     selected_option: tls_v1_2
     value: tls_v1_2
   .properties.routing_tls_termination:
+<<<<<<< HEAD
+    selected_option: load_balancer
+    value: load_balancer
+  .properties.saml_signature_algorithm:
+    value: SHA256
+  .properties.secure_service_instance_credentials:
+    value: false
+=======
     selected_option: router
     value: router
   .properties.saml_signature_algorithm:
@@ -258,13 +290,17 @@ product-properties:
     value: true
   .properties.security_acknowledgement:
     value: X
+>>>>>>> upstream/master
   .properties.silk_database_max_open_connections:
     value: 200
   .properties.smoke_tests:
     selected_option: on_demand
     value: on_demand
+<<<<<<< HEAD
+=======
   .properties.smtp_address:
     value: smtp.sendgrid.net
+>>>>>>> upstream/master
   .properties.smtp_auth_mechanism:
     value: plain
   .properties.smtp_credentials:
@@ -272,11 +308,15 @@ product-properties:
       identity: ((properties_smtp_credentials.identity))
       password: ((properties_smtp_credentials.password))
   .properties.smtp_enable_starttls_auto:
+<<<<<<< HEAD
+    value: false
+=======
     value: true
   .properties.smtp_from:
     value: dacarter@vmware.com
   .properties.smtp_port:
     value: 465
+>>>>>>> upstream/master
   .properties.syslog_drop_debug:
     value: true
   .properties.syslog_tls:
@@ -366,11 +406,16 @@ product-properties:
 network-properties:
   network:
     name: demo-network
+<<<<<<< HEAD
+  other_availability_zones: []
+  singleton_availability_zone: null
+=======
   other_availability_zones:
   - name: us-central1-a
   - name: us-central1-b
   singleton_availability_zone:
     name: us-central1-a
+>>>>>>> upstream/master
 resource-config:
   backup_restore:
     max_in_flight: 1
@@ -410,8 +455,12 @@ resource-config:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
+<<<<<<< HEAD
+    elb_names: []
+=======
     elb_names:
     - tcp:demo-ssh-lb
+>>>>>>> upstream/master
     instance_type:
       id: automatic
     instances: automatic
@@ -483,9 +532,13 @@ resource-config:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
+<<<<<<< HEAD
+    elb_names: []
+=======
     elb_names:
     - tcp:demo-websocket-lb
     - http:demo-http-lb
+>>>>>>> upstream/master
     instance_type:
       id: automatic
     instances: automatic
@@ -495,8 +548,12 @@ resource-config:
     max_in_flight: 1
     additional_networks: []
     additional_vm_extensions: []
+<<<<<<< HEAD
+    elb_names: []
+=======
     elb_names:
     - tcp:demo-tcp-lb
+>>>>>>> upstream/master
     instance_type:
       id: automatic
     instances: 0

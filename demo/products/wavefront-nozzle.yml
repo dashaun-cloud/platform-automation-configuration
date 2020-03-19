@@ -84,4 +84,7 @@ errand-config:
     pre-delete-state: true
   deploy-all:
     post-deploy-state: true
+<<<<<<< HEAD
+=======
 
+>>>>>>> upstream/master

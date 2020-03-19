@@ -1,10 +1,10 @@
 az-configuration:
-  - name: homelab1-az1
+  - name: ((installation_name))-az1
     iaas_configuration_name: default
     clusters:
       - cluster: cluster1
         host_group: null
-        resource_pool: homelab1
+        resource_pool: ((vcenter.rp))
 iaas-configurations:
   - additional_cloud_properties: {}
     bosh_disk_path: ((iaas-configurations_0_bosh_disk_path))
@@ -22,14 +22,14 @@ iaas-configurations:
     vcenter_password: ((iaas-configurations_0_vcenter_password))
 network-assignment:
   network:
-    name: homelab1-network
+    name: ((vcenter.network))
   other_availability_zones: []
   singleton_availability_zone:
-    name: homelab1-az1
+    name: ((installation_name))-az1
 networks-configuration:
   icmp_checks_enabled: true
   networks:
-    - name: homelab1-network
+    - name: ((vcenter.network))
       subnets:
         - iaas_identifier: VM Network
           cidr: 10.1.0.0/24
@@ -37,7 +37,7 @@ networks-configuration:
           gateway: 10.1.0.1
           reserved_ip_ranges: 10.1.0.1-10.1.0.10
           availability_zone_names:
-            - homelab1-az1
+            - ((installation_name))-az1
 properties-configuration:
   director_configuration:
     blobstore_type: local
@@ -68,7 +68,7 @@ properties-configuration:
     handlers:
     - cache:
         enabled: true
-      domain: homelab1.vsphere.dashaun.cloud
+      domain: ((installation_name)).vsphere.((fqdn))
       source:
         recursors:
         - 10.1.0.1
