@@ -1,5 +1,5 @@
 ---
 properties_wavefront_token: ((wavefront-token))
-properties_wavefront_user:
-  username: ((wavefront-user.userame))
-  password: ((wavefront-user.password))
+properties_pcf_password:
+  secret: ((uaa-wavefront-pass))
+  username: ((uaa-wavefront))

@@ -19,14 +19,16 @@ product-properties:
   .properties.org:
     value: wavefront-nozzle-org
   .properties.pcf_host:
-    value: api.sys.us-central1.gcp.dashaun.cloud
+    value: https://api.sys.gcp-us-central1.gcp.dashaun.cloud
+  .properties.pcf_log_stream:
+    value: https://log-stream.sys.gcp-us-central1.gcp.dashaun.cloud
   .properties.pcf_password:
     value:
-      secret: ((properties_wavefront_user.password))
+      secret: ((properties_pcf_password.secret))
   .properties.pcf_skip_ssl_validation:
     value: true
   .properties.pcf_user:
-    value: ((properties_wavefront_user.username))
+    value: ((properties_pcf_password.username))
   .properties.space:
     value: wavefront-apps-space
   .properties.wavefront_service_broker_enable_global_access_to_plans:
@@ -42,7 +44,7 @@ network-properties:
   - name: us-central1-b
   - name: us-central1-a
   singleton_availability_zone:
-  - name: us-central1-a
+    name: us-central1-a
 resource-config:
   delete-all:
     max_in_flight: 1
