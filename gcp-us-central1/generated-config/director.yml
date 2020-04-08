@@ -11,6 +11,7 @@ networks-configuration:
 properties-configuration:
   director_configuration:
     blobstore_type: local
+    bosh_director_recreate_on_next_deploy: false
     bosh_recreate_on_next_deploy: false
     bosh_recreate_persistent_disks_on_next_deploy: false
     database_type: internal
@@ -26,7 +27,7 @@ properties-configuration:
     job_configuration_on_tmpfs: false
     keep_unreachable_vms: false
     local_blobstore_options:
-      enable_signed_urls: false
+      enable_signed_urls: true
     ntp_servers_string: ""
     post_deploy_enabled: false
     resurrector_enabled: false
