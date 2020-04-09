@@ -1,14 +1,14 @@
-
 ---
+# OpsManager 2.8.2, 2.9.0-rc.3
 
 gcp:
   gcp_service_account: ((gcp_credentials_json))
   project: ((project))
   region: ((tf_region))
   zone: ((tf_availability_zones_0))
-  vm_name: gcp-us-central1-ops-manager
-  vpc_subnet: ((tf_subnet_pas_name))
-  tags: gcp-us-central1-ops-manager         # make sure firewall allow 443/22 for network tag of "ops-manager"
+  vm_name: ((tf_environment_name))-ops-manager
+  vpc_subnet: ((tf_pas_subnet_name))
+  tags: ((tf_environment_name))-ops-manager
   custom_cpu: 4                         # default:  8
   custom_memory: 16                     # default: 16
   boot_disk_size: 100                   # default: 400
