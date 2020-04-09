@@ -51,6 +51,11 @@ product-properties:
     value: 0
   .nfs_server.blobstore_internal_access_rules:
     value: allow 10.0.0.0/8;,allow 172.16.0.0/12;,allow 192.168.0.0/16;
+  .properties.app_graceful_shutdown_period_in_seconds:
+    value: 10
+  .properties.app_log_rate_limiting:
+    selected_option: disable
+    value: disable
   .properties.autoscale_api_disable_connection_pooling:
     value: false
   .properties.autoscale_api_instance_count:
@@ -184,20 +189,26 @@ product-properties:
       secret: ((properties_nfs_volume_driver_enable_ldap_service_account_password.secret))
   .properties.push_apps_manager_app_poll_interval:
     value: 10
+  .properties.push_apps_manager_buildpack:
+    value: staticfile_buildpack
   .properties.push_apps_manager_currency_lookup:
     value: '{ "usd": "$", "eur": "€" }'
   .properties.push_apps_manager_display_plan_prices:
     value: false
   .properties.push_apps_manager_enable_invitations:
     value: true
+  .properties.push_apps_manager_invitations_buildpack:
+    value: nodejs_buildpack
   .properties.push_apps_manager_nav_links:
     value:
-    - href: https://docs.pivotal.io/pivotalcf/2-8/pas/intro.html
+    - href: https://docs.pivotal.io/pivotalcf/2-9/pas/intro.html
       name: Docs
     - href: /tools
       name: Tools
   .properties.push_apps_manager_poll_interval:
     value: 30
+  .properties.push_apps_manager_search_server_buildpack:
+    value: nodejs_buildpack
   .properties.push_usage_service_cutoff_age_in_days:
     value: 365
   .properties.route_integrity:
@@ -300,6 +311,8 @@ product-properties:
     value: 1800
   .router.disable_insecure_cookies:
     value: false
+  .router.drain_timeout:
+    value: 900
   .router.drain_wait:
     value: 20
   .router.enable_isolated_routing:
