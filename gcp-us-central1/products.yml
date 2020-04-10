@@ -1,6 +1,17 @@
 ---
 products:
 
+  gcp-stackdriver-nozzle:
+    product-version: "2.1.0"
+    pivnet-product-slug: gcp-stackdriver-nozzle
+    pivnet-api-token: ((pivnet_token))
+    pivnet-file-glob: "stackdriver-nozzle-*.pivotal"
+  gcp-stackdriver-nozzle-stemcell:
+    product-version: "170.211"
+    pivnet-product-slug: stemcells-ubuntu-xenial
+    pivnet-api-token: ((pivnet_token))
+    pivnet-file-glob: "light-bosh-stemcell-*-google-kvm-ubuntu-xenial-go_agent.tgz"
+
   opsman:
     product-version: "2.9.0-rc.3"
     pivnet-product-slug: ops-manager
