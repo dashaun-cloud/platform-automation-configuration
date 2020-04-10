@@ -25,3 +25,9 @@ tf_pks_subnet_name: ((tf_pks_subnet_name))
 tf_services_subnet_cidr: ((tf_services_subnet_cidr))
 tf_services_subnet_gateway: ((tf_services_subnet_gateway))
 tf_services_subnet_name: ((tf_services_subnet_name))
+
+smtp_port: ((sendgrid-port))
+smtp_server: ((sendgrid-host))
+email: ((email))
+properties-configuration_director_configuration_hm_emailer_options_smtp_user: apikey
+properties-configuration_director_configuration_hm_emailer_options_smtp_password: ((sendgrid-api))

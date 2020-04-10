@@ -88,7 +88,7 @@ product-properties:
   .properties.cf_networking_database_connection_timeout:
     value: 120
   .properties.cf_networking_enable_space_developer_self_service:
-    value: false
+    value: true
   .properties.cf_networking_internal_domains:
     value:
     - name: apps.internal
@@ -274,6 +274,8 @@ product-properties:
   .properties.smoke_tests:
     selected_option: on_demand
     value: on_demand
+  .properties.smtp_address:
+    value: ((properties_smtp_address))
   .properties.smtp_auth_mechanism:
     value: plain
   .properties.smtp_credentials:
@@ -281,7 +283,11 @@ product-properties:
       identity: ((properties_smtp_credentials.identity))
       password: ((properties_smtp_credentials.password))
   .properties.smtp_enable_starttls_auto:
-    value: false
+    value: true
+  .properties.smtp_from:
+    value: ((email))
+  .properties.smtp_port:
+    value: ((properties_smtp_port))
   .properties.syslog_drop_debug:
     value: true
   .properties.syslog_tls:

@@ -56,16 +56,24 @@ networks-configuration:
 properties-configuration:
   director_configuration:
     blobstore_type: local
-    bosh_director_recreate_on_next_deploy: false
-    bosh_recreate_on_next_deploy: false
+    bosh_director_recreate_on_next_deploy: true
+    bosh_recreate_on_next_deploy: true
     bosh_recreate_persistent_disks_on_next_deploy: false
     database_type: internal
-    director_worker_count: 5
+    director_worker_count: 10
     encryption:
       keys: []
       providers: []
     hm_emailer_options:
-      enabled: false
+      domain: ((smtp_server))
+      enabled: true
+      from: ((email))
+      host: gcp.dashaun.cloud
+      port: ((smtp_port))
+      recipients: dacarter@pivotal.io
+      smtp_user: ((properties-configuration_director_configuration_hm_emailer_options_smtp_user))
+      smtp_password: ((properties-configuration_director_configuration_hm_emailer_options_smtp_password))
+      tls: true
     hm_pager_duty_options:
       enabled: false
     identification_tags: {}
@@ -74,8 +82,8 @@ properties-configuration:
     local_blobstore_options:
       enable_signed_urls: true
     ntp_servers_string: metadata.google.internal
-    post_deploy_enabled: false
-    resurrector_enabled: false
+    post_deploy_enabled: true
+    resurrector_enabled: true
     retry_bosh_deploys: false
     skip_director_drain: false
   dns_configuration:
