@@ -70,7 +70,7 @@ properties-configuration:
       from: ((email))
       host: gcp.dashaun.cloud
       port: ((smtp_port))
-      recipients: dacarter@pivotal.io
+      recipients: dashaun@dashaun.com
       smtp_user: ((properties-configuration_director_configuration_hm_emailer_options_smtp_user))
       smtp_password: ((properties-configuration_director_configuration_hm_emailer_options_smtp_password))
       tls: true
