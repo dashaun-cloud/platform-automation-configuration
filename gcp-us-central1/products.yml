@@ -20,7 +20,7 @@ products:
 
   # PAS
   pas:
-    product-version: "2.9.0-rc.4"
+    product-version: "2.9.0"
     pivnet-product-slug: elastic-runtime
     pivnet-api-token: ((pivnet_token))
     pivnet-file-glob: "cf-*.pivotal"            # For full fledged PAS, use "cf-*.pivotal" and for Small Footprint use "srt-*.pivotal"
