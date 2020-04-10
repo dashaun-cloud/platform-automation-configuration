@@ -165,7 +165,7 @@ product-properties:
     selected_option: enable
     value: enable
     enable:
-      backend_ca: ""
+      backend_ca: "NA"
   .properties.haproxy_hsts_support:
     selected_option: disable
     value: disable
