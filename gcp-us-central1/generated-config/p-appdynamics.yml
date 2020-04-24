@@ -1,0 +1,46 @@
+product-name: appdynamics
+product-properties:
+  .properties.allow_paid_service_plans:
+    value: false
+  .properties.appdbuildpack_buildpack_order:
+    value: 99
+  .properties.appdservice_enable_global_access_to_plans:
+    value: true
+  .properties.apply_open_security_group:
+    value: true
+  .properties.org:
+    value: appdynamics-org
+  .properties.space:
+    value: appdynamics-space
+network-properties:
+  network:
+    name: gcp-us-central1-network
+  other_availability_zones: []
+  singleton_availability_zone: null
+resource-config:
+  delete-all:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    internet_connected: true
+    swap_as_percent_of_memory_size: automatic
+  deploy-all:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    internet_connected: true
+    swap_as_percent_of_memory_size: automatic
+errand-config:
+  delete-all:
+    pre-delete-state: true
+  deploy-all:
+    post-deploy-state: true
+
