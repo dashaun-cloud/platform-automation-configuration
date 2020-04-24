@@ -87,3 +87,14 @@ products:
     pivnet-product-slug: stemcells-ubuntu-xenial
     pivnet-api-token: ((pivnet_token))
     pivnet-file-glob: "light-bosh-stemcell-*-google-kvm-ubuntu-xenial-go_agent.tgz"
+
+  appdynamics-platform:
+    product-version: 5.0.417
+    pivnet-product-slug: appdynamics-platform
+    pivnet-api-token: ((pivnet_token))
+    pivnet-file-glob: "appdynamics-platform-*.pivotal"
+  appdynamics-platform-stemcell:
+    product-version: "621.64"
+    pivnet-product-slug: stemcells-ubuntu-xenial
+    pivnet-api-token: ((pivnet_token))
+    pivnet-file-glob: "light-bosh-stemcell-*-google-kvm-ubuntu-xenial-go_agent.tgz"
