@@ -81,7 +81,7 @@ products:
     product-version: 4.7.81
     pivnet-product-slug: p-appdynamics
     pivnet-api-token: ((pivnet_token))
-    pivnet-file-glob: "appdynamics_*.pivotal"
+    pivnet-file-glob: "appdynamics-*.pivotal"
   p-appdynamics-stemcell:
     product-version: "315.181"
     pivnet-product-slug: stemcells-ubuntu-xenial
