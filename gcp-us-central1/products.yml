@@ -26,7 +26,7 @@ products:
     pivnet-file-glob: "cf-*.pivotal"            # For full fledged PAS, use "cf-*.pivotal" and for Small Footprint use "srt-*.pivotal"
     stemcell-iaas: google                        # 1) uncomment it if one desires the latest applicable stemcell for the product, or
   pas-stemcell:                                  # 2) use this session to specify exact stemcell you want
-    product-version: "621.64"                    # applicable stemcell range: 315.93–315.99
+    product-version: "456.114"                    # applicable stemcell range: 315.93–315.99
     pivnet-product-slug: stemcells-ubuntu-xenial
     pivnet-api-token: ((pivnet_token))
     pivnet-file-glob: "light-bosh-stemcell-*-google-kvm-ubuntu-xenial-go_agent.tgz"
