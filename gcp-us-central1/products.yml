@@ -66,7 +66,7 @@ products:
     pivnet-file-glob: "light-bosh-stemcell-*-google-kvm-ubuntu-xenial-go_agent.tgz"
 
   wavefront-nozzle:
-    product-version: 2.0.0
+    product-version: 2.1.0
     pivnet-product-slug: wavefront-nozzle
     pivnet-api-token: ((pivnet_token))
     pivnet-file-glob: "wavefront-nozzle-*.pivotal"
