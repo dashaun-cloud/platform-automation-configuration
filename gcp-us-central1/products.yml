@@ -72,7 +72,7 @@ products:
     pivnet-file-glob: "wavefront-nozzle-*.pivotal"
     stemcell-iaas: google
   wavefront-nozzle-stemcell:
-    product-version: "250.190"
+    product-version: "250.196"
     pivnet-product-slug: stemcells-ubuntu-xenial
     pivnet-api-token: ((pivnet_token))
     pivnet-file-glob: "light-bosh-stemcell-*-google-kvm-ubuntu-xenial-go_agent.tgz"
